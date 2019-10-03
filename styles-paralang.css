@@ -1,0 +1,119 @@
+body{
+    font-size: 20px;
+    font-family: Navigo, Verdana, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.grid{
+    display: grid;
+    padding: 2%;
+   /* grid-template-columns: 40% 100px 100px 100px;grid-auto-flow: column;
+    grid-template-rows: 300px 200px;
+    grid-auto-rows: minmax(90px,auto);
+    justify-items: stretch;
+    justify-items: start;
+    justify-items: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr minmax(80px,200px);
+    grid-auto-rows: minmax(140px,auto);
+    grid-gap: 10px;*/
+    
+    /*создаем област ареа*/
+    grid-template-columns:3fr minmax(80px,200px);
+    grid-template-rows: minmax(72px,120px) 60% 72px;
+    grid-template-areas: 
+        "heeading siidebar"
+        "coontent siidebar"
+        "foooter siidebar"
+    
+}
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+header{
+    grid-area:heeading;/*назвали наши области*/
+}
+aside{
+    grid-area:siidebar;
+    overflow: auto;
+}
+main{
+    grid-area:coontent;
+}
+footer{
+    grid-area:foooter;
+    position: fixed;
+    bottom: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.menutop{
+    border: 2px #000;
+}
+.smallmenu{
+    color: blueviolet;
+    padding-top: 4px;
+    font-size: 14px;
+}
+.item,header,aside,main,footer {
+    background: #cbdbff;
+    border: 1ps #000;
+    margin: 10px;
+}
+
+
+@media(max-width:640px){
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "heeading"
+            "coontent"
+            "foooter"
+            "siidebar"       
+    }
+}
+
+
+
+
+
+.rollover{
+    height: 60px;
+    width: 60px;
+    background: url(assets/play@2x.png) no-repeat; /* Путь к файлу с исходным рисунком  */
+    display: inline-block; /*  Рисунок как блочный элемент */
+    text-align: center;
+    background-size: cover;
+    
+   }
+
+rollover:hover {
+    background: url(assets/pause.png); /* Путь к файлу с заменяемым рисунком  */
+    
+   }
+
+.translation{
+    color: red;
+    font-size: 1em;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+
+
+h1{
+    font-size: 8em;
+    vertical-align: top;
+}
+
+item-on{
+    color: black;
+}
+item-off{
+    color: darkgray;
+}
