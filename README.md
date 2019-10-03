@@ -1,0 +1,2 @@
+# paralang-client
+langs
